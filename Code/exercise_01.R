@@ -6,6 +6,14 @@ library("randomForest")
 library("nnet")
 library(tidyverse)
 
+
+# PCA function: prcomp
+pca <- prcomp(mtcars)
+ggplot(as.tibble(pca$x)) +
+  aes(PC1, PC2) +
+  geom_point()
+  
+
 # a)
 cancer <- read.csv("Data/breastCancer_Wisconsin.csv", stringsAsFactors=TRUE)
 cancer$id <- as.factor(cancer$id)

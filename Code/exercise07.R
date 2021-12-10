@@ -1,26 +1,16 @@
 library(nnet)
 
 # only one hidden layer possible with this package
-# 
 
-nn1 <- nnet(Sepal.Length ~ scale(Sepal.Width) + scale(Petal.Length) + scale(Petal.Width),
-            data = iris,
-            size=2,
-            decay=0,
-            linout=TRUE,
-            maxit=10000)
-summary(nn1)
-predict(nn1, newdata = iris)
-
-nn2 <- nnet(Species ~ Sepal.Length + scale(Sepal.Width) + scale(Petal.Length) + scale(Petal.Width),
+nn1 <- nnet(Species ~ Sepal.Length + scale(Sepal.Width) + scale(Petal.Length) + scale(Petal.Width),
             data = iris,
             size=2,
             decay=0,
             linout=FALSE,
             maxit=10000)
-summary(nn2)
-predict(nn2, newdata = iris)
-
+summary(nn1)
+pred <- predict(nn1, newdata = iris, type = "class")
+confusionMatrix(as.factor(pred), iris$Species)
 
 tune <- expand.grid(size = c(1, 5, 10), decay = c(0, .5))
 model <- train(Sepal.Length ~., data = iris, method = "nnet", tuneGrid = tune, maxit = 1e4,
