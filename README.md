@@ -12,5 +12,5 @@ Topics covered in course:
 - Feed forward networks (nnet)
 
 
-You'll find the slides from the lectures in [folder handout](Handout). [Documentation folder](Docu) contains exercises and respective solutions, but all in pdf form. All data which is needed for the exercises is in the [Data folder](Data); make sure to set the working directory of your R project to the main folder in order for the code files to read the data properly (just reuse the [Rproj](UZH_course_ML.Rproj) file from this repo and you're all set).
+You'll find the slides from the lectures in [folder handout](Handout). [Documentation folder](Docu) contains exercises and respective solutions, but all in pdf form. All data which is needed for the exercises is in the [Data folder](Data); make sure to set the working directory of your R project to the main folder in order for the code files to read the data properly (just reuse the [Rproj](UZH_course_ML.Rproj) file from this repo and you should be all set).
 There is one [code file](Code) per exercise which is not an official handout solution but code by [myself](https://github.com/insilentio). The other code files are mainly by Yannick Rothacher.
